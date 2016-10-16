@@ -13,6 +13,8 @@
 		222C185B1DB3129600EE81F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222C185A1DB3129600EE81F9 /* Assets.xcassets */; };
 		222C185E1DB3129600EE81F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222C185C1DB3129600EE81F9 /* LaunchScreen.storyboard */; };
 		22AD3F151DB31C6300C165CF /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD3F141DB31C6300C165CF /* CanvasView.swift */; };
+		22AD3F171DB323BA00C165CF /* UXElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD3F161DB323BA00C165CF /* UXElement.swift */; };
+		22AD3F191DB32F5000C165CF /* ElementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD3F181DB32F5000C165CF /* ElementContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		222C185D1DB3129600EE81F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222C185F1DB3129600EE81F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AD3F141DB31C6300C165CF /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		22AD3F161DB323BA00C165CF /* UXElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UXElement.swift; sourceTree = "<group>"; };
+		22AD3F181DB32F5000C165CF /* ElementContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		22AD3F131DB314DE00C165CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22AD3F161DB323BA00C165CF /* UXElement.swift */,
+				22AD3F181DB32F5000C165CF /* ElementContainer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				222C18561DB3129600EE81F9 /* CanvasController.swift in Sources */,
+				22AD3F171DB323BA00C165CF /* UXElement.swift in Sources */,
 				222C18541DB3129600EE81F9 /* AppDelegate.swift in Sources */,
+				22AD3F191DB32F5000C165CF /* ElementContainer.swift in Sources */,
 				22AD3F151DB31C6300C165CF /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
