@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		222C18541DB3129600EE81F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C18531DB3129600EE81F9 /* AppDelegate.swift */; };
-		222C18561DB3129600EE81F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C18551DB3129600EE81F9 /* ViewController.swift */; };
+		222C18561DB3129600EE81F9 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C18551DB3129600EE81F9 /* CanvasController.swift */; };
 		222C18591DB3129600EE81F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222C18571DB3129600EE81F9 /* Main.storyboard */; };
 		222C185B1DB3129600EE81F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222C185A1DB3129600EE81F9 /* Assets.xcassets */; };
 		222C185E1DB3129600EE81F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222C185C1DB3129600EE81F9 /* LaunchScreen.storyboard */; };
+		22AD3F151DB31C6300C165CF /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD3F141DB31C6300C165CF /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		222C18501DB3129600EE81F9 /* iDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222C18531DB3129600EE81F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		222C18551DB3129600EE81F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		222C18551DB3129600EE81F9 /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
 		222C18581DB3129600EE81F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		222C185A1DB3129600EE81F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222C185D1DB3129600EE81F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222C185F1DB3129600EE81F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22AD3F141DB31C6300C165CF /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,38 @@
 			isa = PBXGroup;
 			children = (
 				222C18531DB3129600EE81F9 /* AppDelegate.swift */,
-				222C18551DB3129600EE81F9 /* ViewController.swift */,
+				22AD3F111DB314CE00C165CF /* Controller */,
+				22AD3F131DB314DE00C165CF /* Model */,
+				22AD3F121DB314D500C165CF /* View */,
 				222C18571DB3129600EE81F9 /* Main.storyboard */,
 				222C185A1DB3129600EE81F9 /* Assets.xcassets */,
 				222C185C1DB3129600EE81F9 /* LaunchScreen.storyboard */,
 				222C185F1DB3129600EE81F9 /* Info.plist */,
 			);
 			path = iDesign;
+			sourceTree = "<group>";
+		};
+		22AD3F111DB314CE00C165CF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				222C18551DB3129600EE81F9 /* CanvasController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		22AD3F121DB314D500C165CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22AD3F141DB31C6300C165CF /* CanvasView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		22AD3F131DB314DE00C165CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222C18561DB3129600EE81F9 /* ViewController.swift in Sources */,
+				222C18561DB3129600EE81F9 /* CanvasController.swift in Sources */,
 				222C18541DB3129600EE81F9 /* AppDelegate.swift in Sources */,
+				22AD3F151DB31C6300C165CF /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +328,7 @@
 				222C18641DB3129600EE81F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
