@@ -10,46 +10,40 @@ import UIKit
 
 class CanvasController: UIViewController {
     
-    var elementContainer: ElementContainer!
-    var elementModel: UXElement!
-
     var canvasView: CanvasView {
         return self.view as! CanvasView
     }
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        elementModel = UXElement(name: "em", className: "UIView", view: canvasView.dragView)
-        elementContainer = ElementContainer(className: "MyView")
-        elementContainer.add(element: elementModel)
         canvasView.dragView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CanvasController.panDragView)))
-        canvasView.shareButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CanvasController.shareTapped)))
+        
+        canvasView.dragView.leftTopCircle.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CanvasController.resizeDragView)))
+        
+        canvasView.dragView.rightTopCircle.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CanvasController.resizeDragView)))
+        
+        canvasView.dragView.leftBottomCircle.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CanvasController.resizeDragView)))
+        
+        canvasView.dragView.rightBottomCircle.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CanvasController.resizeDragView)))
+        
     }
     
-    func panDragView(sender: UIPanGestureRecognizer) {
+    @objc func panDragView(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
         
         sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
         
         sender.setTranslation(CGPoint.zero, in: self.view)
+        canvasView.dragView.leftTopCircle.center = CGPoint(x: canvasView.dragView.leftTopCircle.center.x + translation.x, y: canvasView.dragView.leftBottomCircle.center.y + translation.y)
+        
     }
     
-    func shareTapped() {
-        // Set up and open Apple's default sharing feature.
-        
-        let objectsToShare: Array<NSObject> = [elementContainer.generateSwiftCode() as NSObject]
-        
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        
-        let popoverView = UIView()
-        if activityVC.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
-            // TODO: iPad
-        }
-        
-        self.present(activityVC, animated: true, completion: {
-            popoverView.removeFromSuperview()
-        })
+    func resizeDragView(sender: UIPanGestureRecognizer) {
+        sender.view!.frame = CGRect(x: (sender.view! as! ResizeCircle).elementView.frame.origin.x, y: (sender.view! as! ResizeCircle).frame.origin.y, width: (sender.view! as! ResizeCircle).frame.width + sender.translation(in: self.view).x, height: (sender.view! as! ResizeCircle).frame.height + sender.translation(in:self.view).y)
     }
-
+    
 }
 
